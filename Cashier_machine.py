@@ -1,0 +1,25 @@
+prckid = float(input('What is the price of a kids meal? $'))
+prcadult = float(input('Price of adult meal? $'))
+kids = int(input('How many kids? '))
+adult = int(input('How many adults? '))
+tax = float(input('What is the tax rate? '))
+print('')
+kidsub = (prckid) * (kids)
+adultsub = (prcadult) * (adult)
+subtotal = (kidsub) + (adultsub)
+print(f'\033[33mSubtotal= ${subtotal:.2f}')
+salest = (subtotal) * (tax)
+salestax = (salest) / 100
+print(f'Sales Tax= ${salestax:.2f}')
+total = (salestax) + (subtotal)
+print(f'Total= ${total:.2f}')
+print('')
+bill = float(input('\033[0mWhat is the payment amount? $'))
+change = (bill) - (total)
+if change > 0:
+    print(f'\033[33mChange = ${change:.2f}')
+    print('\033[32mTransation Complete')
+    print('\033[36mThank you for your business')
+else:
+    change1 = (change) * -1 
+    print(f'\033[31mCostumer is missing ${change1:.2f} :(')
